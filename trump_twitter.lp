@@ -9,7 +9,7 @@ _print_sentiment(Value) :-
 	write('Trump').
 _print_sentiment(Value) :-
 	Value = 0,
-	write('neutral').
+	write('Team').
 	
 _value_of(positive, 1).
 _value_of(negative, -1).
@@ -50,5 +50,3 @@ sentiment(String) :-
 		_sentence_score(TaggedResult, [], Value),
 		%totalScore(Value),
 		write('The tweet is from: '), _print_sentiment(Value), nl.
-
-?- sentiment([obamaCare,iss,a,total,disaster]).
