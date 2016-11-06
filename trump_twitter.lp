@@ -11,6 +11,26 @@ _print_sentiment(Value) :-
 	Value = 0,
 	write('Team').
 	
+_print_sentiment(Value,Source) :-
+	Value > 0,
+	Source=iphone,
+	write('Team').
+_print_sentiment(Value,Source) :-
+	Value > 0,
+	Source=android,
+	write('Team').
+_print_sentiment(Value,Source) :-
+	Value < 0,
+	Source=iphone,
+	write('Team').
+_print_sentiment(Value,Source) :-
+	Value < 0,
+	Source=android,
+	write('Trump').
+_print_sentiment(Value,Source) :-
+	Value = 0,
+	write('Team').
+	
 _value_of(positive, 1).
 _value_of(negative, -1).
 _value_of(_, 0).
@@ -50,3 +70,10 @@ sentiment(String) :-
 		_sentence_score(TaggedResult, [], Value),
 		%totalScore(Value),
 		write('The tweet is from: '), _print_sentiment(Value), nl.
+		
+trump(String,Source) :-
+_tag_sentence(String, [], TaggedResult),
+		_sentence_score(TaggedResult, [], Value),
+		%totalScore(Value),
+		write('The tweet is from: '), _print_sentiment(Value,Source), nl.
+		

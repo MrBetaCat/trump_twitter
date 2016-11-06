@@ -16,7 +16,6 @@ _keyword(little, dec).
 
 _keyword(too, inc).
 _keyword(very, inc).
-_keyword(sorely, inc).
 
 _keyword(lack, inv).
 _keyword(nott, inv).
